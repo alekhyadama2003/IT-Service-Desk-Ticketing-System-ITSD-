@@ -1,0 +1,27 @@
+-- ============================================================
+-- Script  : 02_constraints_indexes.sql
+---- ============================================================
+
+CREATE NONCLUSTERED INDEX IX_Ticket_StatusID
+    ON Ticket(StatusID) INCLUDE (TicketID, AssignedToID, PriorityID);
+
+CREATE NONCLUSTERED INDEX IX_Ticket_AssignedToID
+    ON Ticket(AssignedToID) INCLUDE (StatusID, PriorityID, CreatedDate);
+
+CREATE NONCLUSTERED INDEX IX_Ticket_CreatedDate
+    ON Ticket(CreatedDate);
+
+CREATE NONCLUSTERED INDEX IX_Ticket_ResolvedDate
+    ON Ticket(ResolvedDate);
+
+CREATE NONCLUSTERED INDEX IX_Ticket_Status_Agent
+    ON Ticket(StatusID, AssignedToID);
+
+CREATE NONCLUSTERED INDEX IX_Comment_TicketID
+    ON Comment(TicketID) INCLUDE (UserID, CreatedDate);
+
+CREATE NONCLUSTERED INDEX IX_AuditLog_RecordID
+    ON AuditLog(RecordID, TableName) INCLUDE (Action, ChangedDate);
+
+CREATE NONCLUSTERED INDEX IX_Users_DepartmentID
+    ON Users(DepartmentID) INCLUDE (Role, IsActive);
