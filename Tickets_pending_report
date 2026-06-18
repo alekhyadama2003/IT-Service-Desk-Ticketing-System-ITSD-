@@ -1,0 +1,15 @@
+-- Report: Tickets Pending More Than 72 Hours
+SELECT
+    t.TicketID, t.Title,
+    p.PriorityName, s.StatusName,
+    u.FullName AS AssignedAgent,
+    t.CreatedDate,
+    DATEDIFF(HOUR, t.CreatedDate, GETDATE()) AS PendingHours,
+    dbo.fn_GetSLAStatus(t.TicketID)          AS SLAStatus
+FROM Ticket t
+JOIN Priority p  ON t.PriorityID   = p.PriorityID
+JOIN Status   s  ON t.StatusID     = s.StatusID
+LEFT JOIN Users u ON t.AssignedToID = u.UserID
+WHERE s.StatusName NOT IN ('Resolved','Closed')
+  AND DATEDIFF(HOUR, t.CreatedDate, GETDATE()) > 72
+ORDER BY PendingHours DESC;
