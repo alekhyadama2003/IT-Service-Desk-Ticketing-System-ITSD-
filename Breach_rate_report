@@ -1,0 +1,16 @@
+-- Report: SLA Breach Rate by Priority
+SELECT
+    p.PriorityName,
+    COUNT(t.TicketID) AS TotalTickets,
+    SUM(CASE WHEN DATEDIFF(HOUR, t.CreatedDate, ISNULL(t.ResolvedDate, GETDATE())) > sl.ResolutionHrs
+             THEN 1 ELSE 0 END) AS BreachedCount,
+    CAST(
+        SUM(CASE WHEN DATEDIFF(HOUR, t.CreatedDate, ISNULL(t.ResolvedDate, GETDATE())) > sl.ResolutionHrs
+                 THEN 1.0 ELSE 0.0 END) * 100
+        / NULLIF(COUNT(t.TicketID), 0)
+    AS DECIMAL(5,2)) AS BreachRatePct
+FROM Ticket t
+JOIN Priority p  ON t.PriorityID = p.PriorityID
+JOIN SLA      sl ON t.PriorityID = sl.PriorityID
+GROUP BY p.PriorityName, sl.ResolutionHrs
+ORDER BY p.PriorityName;
