@@ -1,0 +1,24 @@
+CREATE OR ALTER FUNCTION fn_GetSLAStatus (@TicketID INT)
+RETURNS NVARCHAR(20)
+AS
+BEGIN
+    DECLARE @Result     NVARCHAR(20);
+    DECLARE @StatusName NVARCHAR(50);
+    DECLARE @ElapsedHrs INT;
+    DECLARE @SLAHours   INT;
+
+    SELECT
+        @StatusName = s.StatusName,
+        @ElapsedHrs = DATEDIFF(HOUR, t.CreatedDate, ISNULL(t.ResolvedDate, GETDATE())),
+        @SLAHours   = sl.ResolutionHrs
+    FROM Ticket t
+    JOIN Status s  ON t.StatusID   = s.StatusID
+    JOIN SLA    sl ON t.PriorityID = sl.PriorityID
+    WHERE t.TicketID = @TicketID;
+
+    IF @StatusName IN ('Resolved','Closed') SET @Result = 'Closed';
+    ELSE IF @ElapsedHrs > @SLAHours         SET @Result = 'Breached';
+    ELSE                                     SET @Result = 'On Track';
+
+    RETURN @Result;
+END;
