@@ -1,118 +1,118 @@
-# 🖥️ IT Service Desk & Ticketing System (ITSD)
-### Internship Project — High Flows IT Solutions Pvt. Ltd.
+# IT Service Desk & Ticketing System (ITSD)
+
+A relational database project built during a Jr Engineer Internship to manage the complete lifecycle of IT support tickets — creation, assignment, SLA tracking, escalation, resolution and reporting.
 
 ---
 
-## 👩‍💻 Intern Details
+## Skills
 
-| Field | Details |
+![SQL](https://img.shields.io/badge/SQL-SQL%20Server%202022-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
+![SDLC](https://img.shields.io/badge/SDLC-Agile%20Scrum-0078D4?style=for-the-badge)
+![Debugging](https://img.shields.io/badge/Debugging-SQL%20Profiler%20%7C%20Execution%20Plans-228B22?style=for-the-badge)
+![Troubleshooting](https://img.shields.io/badge/Troubleshooting-Bug%20Fixes%20%7C%20Index%20Optimisation-FF8C00?style=for-the-badge)
+![DBMS](https://img.shields.io/badge/DBMS-Normalisation%20%7C%20Transactions%20%7C%20Integrity-6A0DAD?style=for-the-badge)
+![Testing](https://img.shields.io/badge/Testing-Test%20Cases%20%7C%20Regression-DC143C?style=for-the-badge)
+
+---
+
+## Project Overview
+
+The ITSD system digitises the IT support workflow for an organisation. It handles:
+- Ticket creation, assignment, escalation and closure
+- SLA breach detection and alerting
+- Agent performance and workload tracking
+- Full audit trail of all changes
+- Analytical reports for management
+
+---
+
+## SQL Concepts Covered
+
+| Area | Details |
 |---|---|
-| **Name** | Alekhya Dama |
-| **Designation** | Jr Engineer Intern |
-| **Candidate ID** | HF 1024 |
-| **Company** | High Flows IT Solutions Pvt. Ltd., Hyderabad |
-| **Internship Duration** | 12 January 2026 – 12 July 2026 |
+| DDL | CREATE TABLE, ALTER TABLE, DROP — 10 tables with all constraints |
+| DML | INSERT, UPDATE, DELETE, MERGE — across all modules |
+| Constraints | PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK, DEFAULT |
+| Indexes | Clustered & non-clustered indexes for query optimisation |
+| Views | 5 views for reporting and data abstraction |
+| Stored Procedures | 6 parameterised SPs with TRY/CATCH and transaction handling |
+| Triggers | AFTER INSERT / UPDATE triggers for audit logging |
+| Functions | Scalar UDF for SLA status calculation |
+| Joins | INNER JOIN, LEFT JOIN across 10 relational tables |
+| Subqueries & CTEs | Common Table Expressions for multi-step logic |
+| Window Functions | ROW_NUMBER(), DENSE_RANK(), LAG() with PARTITION BY |
+| Aggregations | GROUP BY, ROLLUP, HAVING, PIVOT for reports |
+| Transactions | BEGIN TRAN, COMMIT, ROLLBACK for data consistency |
 
 ---
 
-## 📌 Project Overview
-
-The **IT Service Desk & Ticketing System (ITSD)** is an internal database-driven application built to digitise and streamline IT support operations. It manages the complete lifecycle of IT support tickets — from creation and assignment to SLA tracking, escalation, resolution and reporting.
-
-This project was designed, developed, tested and deployed entirely during the 6-month internship at High Flows IT Solutions using **SQL Server 2022** and **T-SQL**, following an **Agile-Scrum SDLC** methodology.
-
----
-
-## 🛠️ Skills & Technologies Used
-
-### 🗄️ SQL & Database
-![SQL Server](https://img.shields.io/badge/SQL%20Server-2022-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
-![T-SQL](https://img.shields.io/badge/T--SQL-Advanced-CC2927?style=for-the-badge)
-
-- **DDL** — CREATE, ALTER, DROP for tables, views, indexes
-- **DML** — INSERT, UPDATE, DELETE, MERGE for data operations
-- **Joins** — INNER JOIN, LEFT JOIN across 10 relational tables
-- **Subqueries & CTEs** — Common Table Expressions for multi-step logic
-- **Window Functions** — ROW_NUMBER(), RANK(), DENSE_RANK(), LAG(), PARTITION BY
-- **Stored Procedures** — 6 parameterised SPs with TRY/CATCH and transaction handling
-- **Triggers** — AFTER INSERT/UPDATE triggers for audit trail logging
-- **User Defined Functions** — Scalar functions for SLA status and date calculations
-- **Indexes** — Clustered and non-clustered indexes for query optimisation
-- **Views** — 5 views for reporting and data abstraction
-- **Aggregations** — GROUP BY, ROLLUP, CUBE, HAVING, PIVOT
-
----
-
-### 🔄 SDLC (Software Development Life Cycle)
-
-Followed **Agile-Scrum** methodology across **7 sprints** from January to July 2026.
+## SDLC — Agile Scrum (7 Sprints)
 
 | Phase | Activities |
 |---|---|
-| **Requirement Gathering** | Stakeholder interviews, 25 user stories, SRS v1.0 document |
-| **System Design** | ER diagram, normalisation (1NF–3NF), HLD & schema design |
-| **Development** | DDL scripts, stored procedures, triggers, views, functions |
-| **Testing** | 40 test cases, regression testing, integration testing |
-| **UAT** | UAT sessions with stakeholders, 5 change requests implemented |
-| **Deployment** | Staging deployment, SQL Agent job setup, deployment runbook |
-| **Support** | Post go-live monitoring, bug fixes, knowledge transfer |
+| Requirement Gathering | Stakeholder interviews, 25 user stories, SRS v1.0 |
+| System Design | ER diagram, normalisation (1NF–3NF), schema design |
+| Development | DDL scripts, SPs, triggers, views, functions |
+| Testing | 40 test cases, regression testing, integration testing |
+| UAT | Sessions with stakeholders, 5 change requests implemented |
+| Deployment | Staging deployment, SQL Agent job, deployment runbook |
+| Support | Post go-live monitoring, bug fixes, knowledge transfer |
 
 ---
 
-### 🐛 Debugging
+## Debugging
 
-- Used **SQL Server Profiler** to trace and identify slow-running queries
-- Analysed **Execution Plans** to detect Table Scans and missing indexes
+- Used **SQL Server Profiler** to trace slow-running queries during load testing
+- Analysed **Execution Plans** to detect Table Scans and missing index warnings
 - Used **SET STATISTICS TIME** and **SET STATISTICS IO** to measure query cost
-- Resolved **foreign key constraint violations**, **trigger recursion warnings**, **collation mismatch errors** and **data truncation errors**
-- Used **Git blame** and **diff** to trace logic bugs introduced in previous commits
-- Identified and fixed **8 bugs** logged and tracked in Jira across development and UAT
+- Used **Git blame** and **diff** to trace logic bugs across commits
+- Reduced average query time from **380ms → 145ms** via index optimisation
 
 ---
 
-### 🔧 Troubleshooting
+## Troubleshooting
 
-- Fixed **SLA breach logic** not triggering for P1 tickets created on weekends
-- Resolved **AuditLog trigger** inserting duplicate rows on bulk update operations
-- Corrected **vw_SLABreach** view returning false positives due to operator error
-- Fixed **sp_CloseTicket** allowing re-closure of already-closed tickets
-- Reduced average query time from **380ms → 145ms** through index optimisation
-- Used **DBCC CHECKDB** to verify database integrity across environments
-- Resolved **VARCHAR(255) truncation** error by migrating to VARCHAR(MAX)
+| Bug | Root Cause | Fix Applied |
+|---|---|---|
+| sp_CloseTicket re-closing tickets | Missing status guard | Added IF check before UPDATE |
+| SLA breach not triggering on weekends | Date boundary logic error | Corrected DATEDIFF calculation |
+| AuditLog duplicate rows on bulk update | Trigger firing per row | Added batch-level dedup check |
+| vw_SLABreach false positives | Wrong comparison operator | Corrected `>` to `<=` |
+| Description truncation error | VARCHAR(255) too small | Migrated to VARCHAR(MAX) |
+| Collation mismatch on JOIN | Tables had different collation | Added COLLATE clause |
 
 ---
 
-## 🗂️ Database Schema
+## Database Schema
 
 | Table | Purpose |
 |---|---|
 | `Ticket` | Core ticket records with status, priority and timestamps |
-| `User` | Agent and end-user details with role-based access |
+| `Users` | Agents and end-users with role-based access |
 | `Department` | Organisational department mapping |
 | `Category` | Ticket category classification |
-| `Priority` | Priority levels P1 to P4 |
-| `Status` | Ticket lifecycle states: Open, In Progress, Resolved, Closed |
+| `Priority` | Priority levels P1–P4 with SLA hours |
+| `Status` | Ticket lifecycle states: Open → In Progress → Resolved → Closed |
 | `Comment` | Agent and user comments on tickets |
 | `Attachment` | File attachments linked to tickets |
-| `SLA` | SLA resolution hours per priority level |
+| `SLA` | Resolution and response hours per priority |
 | `AuditLog` | Full audit trail of all INSERT and UPDATE events |
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 ITSD/
-│
 ├── schema/
-│   ├── 01_create_tables.sql         # DDL scripts for all 10 tables
-│   ├── 02_constraints_indexes.sql   # FK, UK, CHECK constraints and indexes
-│   └── 03_seed_data.sql             # Sample/test data for all tables
+│   ├── 01_create_tables.sql
+│   ├── 02_constraints_indexes.sql
+│   └── 03_seed_data.sql
 │
 ├── views/
 │   ├── vw_OpenTickets.sql
-│   ├── vw_TicketsByAgent.sql
 │   ├── vw_SLABreach.sql
+│   ├── vw_TicketsByAgent.sql
 │   ├── vw_DeptSummary.sql
 │   └── vw_TicketHistory.sql
 │
@@ -136,45 +136,34 @@ ITSD/
 │   ├── rpt_AgentPerformance.sql
 │   ├── rpt_SLABreachRate.sql
 │   ├── rpt_MonthlyVolume.sql
-│   ├── rpt_FirstResponseTime.sql
 │   └── rpt_PendingOver72Hrs.sql
-│
-├── docs/
-│   ├── SRS_v1.0.pdf                 # Software Requirements Specification
-│   ├── ER_Diagram.png               # Entity Relationship Diagram
-│   ├── Data_Dictionary.xlsx         # All tables, columns and constraints
-│   └── Deployment_Runbook.pdf       # Step-by-step deployment guide
 │
 └── README.md
 ```
 
 ---
 
-## 📅 Monthly Progress
+## How to Run
 
-| Month | Focus Area |
+1. Open **SQL Server Management Studio (SSMS)**
+2. Create a new database: `CREATE DATABASE ITSD_DB;`
+3. Run scripts in order:
+   - `schema/01_create_tables.sql`
+   - `schema/02_constraints_indexes.sql`
+   - `schema/03_seed_data.sql`
+   - All files in `views/`, `functions/`, `triggers/`, `stored_procedures/`
+   - Reports can be run anytime after setup
+
+---
+
+## Intern Details
+
+| | |
 |---|---|
-| **Jan 2026** | Onboarding, project introduction, requirement gathering, ER diagram |
-| **Feb 2026** | Database schema design, DDL scripting, views, seed data |
-| **Mar 2026** | Stored procedures, triggers, advanced SQL, CTEs, window functions |
-| **Apr 2026** | Debugging, troubleshooting, testing, QA, query optimisation |
-| **May 2026** | Report generation, advanced SQL analytics, documentation |
-| **Jun 2026** | UAT support, change requests, deployment preparation |
-| **Jul 2026** | Production support, final handover, internship closure |
+| **Name** | Alekhya Dama |
+| **Designation** | Jr Engineer Intern |
+| **Candidate ID** | HF 1024 |
+| **Duration** | 12 January 2026 – 12 July 2026 |
 
----
-
-## 🏢 Company
-
-**High Flows IT Solutions Pvt. Ltd.**
-Plot #682, 5th Floor, Babukhan Rasheed Plaza,
-Road No:36, Aditya Enclave, Jubilee Hills,
-Hyderabad, Telangana – 500033
-
-📞 +91-9059830801
-🌐 [www.highflowsitsolutions.com](https://www.highflowsitsolutions.com)
-📧 info@highflowsitsolutions.com
-
----
 
 > *This project was developed as part of the Jr Engineer Internship Programme at High Flows IT Solutions Pvt. Ltd. from January 2026 to July 2026.*
