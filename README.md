@@ -1,6 +1,6 @@
 # IT Service Desk & Ticketing System (ITSD)
 
-A relational database project built during a Jr Engineer Internship to manage the complete lifecycle of IT support tickets — creation, assignment, SLA tracking, escalation, resolution and reporting.
+Coordinated with Senior Developers while project building during a Jr Engineer Internship to manage the complete lifecycle of IT support tickets — creation, assignment, SLA tracking, escalation, resolution and reporting.
 
 ---
 
